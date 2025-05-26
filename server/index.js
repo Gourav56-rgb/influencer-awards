@@ -31,6 +31,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/contests', contestsRouter);
 
+app.get("/", (req, res) => {
+  res.send("This is home route")
+})
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
