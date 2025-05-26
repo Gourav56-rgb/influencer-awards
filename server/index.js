@@ -11,17 +11,12 @@ dotenv.config()
 connectDB()
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.options('*', cors());
 
